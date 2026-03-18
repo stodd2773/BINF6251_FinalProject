@@ -24,8 +24,13 @@ Some key assumptions that are made when implementing this algorithm are:
 	- All crew members have an equal chance of being suggested by the algorithm, but unequal chance of selection
 
 # Pseudocode 
+FUNCTION create usable data structure from academy award databse
+	input: url of academy award database website
+	output: dictionary containing award names as keys and nominees as values, with special character to indicate winner
+	// I am struggling a little bit with this function. Obtaining data from a website that is not in a format I am comfortable working with (tsv, csv, txt) is outside of my comfort zone and not something I have experience with. This function is important to obtain the desired data and data type. Although, I do think this function is the least important in terms of conceptual application of the algorithm
 
-# Complexity and Bottlenecks
+FUNCTION  
+# Complexity and Bottleneck
 A reliable aspect of complexity in this algorithm is, every single input will have the same, predefined length. 
 By selecting the criteria we care about, we can control complexity in this aspect. Complexity will begin 
 to increase depending on the number of awards introduced and the decision on whether or not the algorithm will care 
