@@ -25,11 +25,34 @@ Some key assumptions that are made when implementing this algorithm are:
 
 # Pseudocode 
 FUNCTION create usable data structure from academy award databse
-	input: url of academy award database website
+	input: url of academy award database website, list of oscar categories
 	output: dictionary containing award names as keys and nominees as values, with special character to indicate winner
 	// I am struggling a little bit with this function. Obtaining data from a website that is not in a format I am comfortable working with (tsv, csv, txt) is outside of my comfort zone and not something I have experience with. This function is important to obtain the desired data and data type. Although, I do think this function is the least important in terms of conceptual application of the algorithm
 
-FUNCTION  
+FUNCTION create nominated movie list
+
+//idea of this function is to make a list of all movies that have been nominated for given category
+input: data from first function
+output: nominated movie list
+	
+initialize nominee list
+for year in the range of start year to end year:
+	for movie nominated in category
+		append to nominee list
+return the nominee list
+
+FUNCTION get movie crew
+
+//function will take in a list of movies and create a dictionary that maps movies to crew members
+input: list of movies, list of desired crew
+output: dictionary where key, value = movie, dictionary of cast members
+Example output: {'Movie_Title : {Actor_1: 'Actor/Actress name', Actor_2: 'Actor/Actress name', Director: 'Director name}
+
+for movie in list of movies:
+	for key in dictionary[Movie_Title]
+	use IMDb python package cinemagoer to obtain actor1, actor2, etc. 
+	
+
 # Complexity and Bottleneck
 A reliable aspect of complexity in this algorithm is, every single input will have the same, predefined length. 
 By selecting the criteria we care about, we can control complexity in this aspect. Complexity will begin 
