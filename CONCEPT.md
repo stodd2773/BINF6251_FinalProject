@@ -29,17 +29,19 @@ FUNCTION create usable data structure from academy award databse
 	output: dictionary containing award names as keys and nominees as values, with special character to indicate winner
 	// I am struggling a little bit with this function. Obtaining data from a website that is not in a format I am comfortable working with (tsv, csv, txt) is outside of my comfort zone and not something I have experience with. This function is important to obtain the desired data and data type. Although, I do think this function is the least important in terms of conceptual application of the algorithm
 
-FUNCTION create nominated movie list
+FUNCTION create nominated movie dict
 
-//idea of this function is to make a list of all movies that have been nominated for given category
+//idea of this function is to make a nested dictionary of keys that are the category names, and values that are another dictiona 
 input: data from first function
 output: nominated movie list
 	
-initialize nominee list
+initialize category nominee dictionary
+Best_picture = {}
 for year in the range of start year to end year:
 	for movie nominated in category
-		append to nominee list
+		Best
 return the nominee list
+
 
 FUNCTION get movie crew
 
@@ -50,7 +52,21 @@ Example output: {'Movie_Title : {Actor_1: 'Actor/Actress name', Actor_2: 'Actor/
 
 for movie in list of movies:
 	for key in dictionary[Movie_Title]
-	use IMDb python package cinemagoer to obtain actor1, actor2, etc. 
+		use IMDb python package cinemagoer to obtain actor1, actor2, director etc
+		// reason I am doing top 2 billed actors/actresses for each movie and not top Actor and top Actress is because IMDb only gives names. This avoids making gender assumptions based on name only, which could skew     		results
+		dictionary[Movie Title][key] = get director name using cinemagoer
+return dictionary
+
+FUNCTION randomize movie
+//This function will drive the suggestion aspect of the algorithm. Since metropolis hastings suggestions do not fix a variable like Gibbs, suggestions may change one or all variables
+
+input: category, category nomination list
+output: randomized movie crew
+
+	
+
+
+
 	
 
 # Complexity and Bottleneck
