@@ -24,29 +24,17 @@ Some key assumptions that are made when implementing this algorithm are:
 	- All crew members have an equal chance of being suggested by the algorithm, but unequal chance of selection
 
 # Pseudocode 
+```
 FUNCTION create usable data structure from academy award databse
 	input: url of academy award database website, list of oscar categories
 	output: dictionary containing award names as keys and nominees as values, with special character to indicate winner
 	// I am struggling a little bit with this function. Obtaining data from a website that is not in a format I am comfortable working with (tsv, csv, txt) is outside of my comfort zone and not something I have experience with. This function is important to obtain the desired data and data type. Although, I do think this function is the least important in terms of conceptual application of the algorithm
 
-FUNCTION create nominated movie dict
-
-//idea of this function is to make a nested dictionary of keys that are the category names, and values that are another dictiona 
-input: data from first function
-output: nominated movie list
-	
-initialize category nominee dictionary
-Best_picture = {}
-for year in the range of start year to end year:
-	for movie nominated in category
-		Best
-return the nominee list
-
 
 FUNCTION get movie crew
 
 //function will take in a list of movies and create a dictionary that maps movies to crew members
-input: list of movies, list of desired crew
+input:
 output: dictionary where key, value = movie, dictionary of cast members
 Example output: {'Movie_Title : {Actor_1: 'Actor/Actress name', Actor_2: 'Actor/Actress name', Director: 'Director name}
 
@@ -57,6 +45,32 @@ for movie in list of movies:
 		dictionary[Movie Title][key] = get director name using cinemagoer
 return dictionary
 
+
+FUNCTION create nominated movie list
+
+//idea of this function is to make a list of nominated movies
+input: data from first function, category
+output: nominated movie list
+	
+initialize category nominee list
+nominee list = []
+for year in the range of start year to end year:
+	for movie nominated in category
+		append to nominee list
+return the nominee list
+
+FUNCTION All info
+//function will create a 3-tier nested dictionary with outer dict being category, middle dict is movie titles and inner dict is crew
+
+input: category, nominee list
+output: 3-tier nested dict that contains category, move and crew
+
+initialize 3-tier dict
+movie_list = create nominated movie list (all data , category)
+	
+	
+		get crew(movie) 
+
 FUNCTION randomize movie
 //This function will drive the suggestion aspect of the algorithm. Since metropolis hastings suggestions do not fix a variable like Gibbs, suggestions may change one or all variables
 
@@ -64,8 +78,7 @@ input: category, category nomination list
 output: randomized movie crew
 
 	
-
-
+```
 
 	
 
