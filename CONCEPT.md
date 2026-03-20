@@ -30,22 +30,6 @@ FUNCTION create usable data structure from academy award databse
 	output: dictionary containing award names as keys and nominees as values, with special character to indicate winner
 	// I am struggling a little bit with this function. Obtaining data from a website that is not in a format I am comfortable working with (tsv, csv, txt) is outside of my comfort zone and not something I have experience with. This function is important to obtain the desired data and data type. Although, I do think this function is the least important in terms of conceptual application of the algorithm
 
-
-FUNCTION get movie crew
-
-//function will take in a list of movies and create a dictionary that maps movies to crew members
-input:
-output: dictionary where key, value = movie, dictionary of cast members
-Example output: {'Movie_Title : {Actor_1: 'Actor/Actress name', Actor_2: 'Actor/Actress name', Director: 'Director name}
-
-for movie in list of movies:
-	for key in dictionary[Movie_Title]
-		use IMDb python package cinemagoer to obtain actor1, actor2, director etc
-		// reason I am doing top 2 billed actors/actresses for each movie and not top Actor and top Actress is because IMDb only gives names. This avoids making gender assumptions based on name only, which could skew     		results
-		dictionary[Movie Title][key] = get director name using cinemagoer
-return dictionary
-
-
 FUNCTION create nominated movie list
 
 //idea of this function is to make a list of nominated movies
@@ -59,23 +43,55 @@ for year in the range of start year to end year:
 		append to nominee list
 return the nominee list
 
-FUNCTION All info
-//function will create a 3-tier nested dictionary with outer dict being category, middle dict is movie titles and inner dict is crew
 
-input: category, nominee list
-output: 3-tier nested dict that contains category, move and crew
+FUNCTION get movie crew
 
-initialize 3-tier dict
-movie_list = create nominated movie list (all data , category)
-	
-	
-		get crew(movie) 
+//function will take in a list of movies and create a dictionary that maps movies to crew members
+input: nominated movie list
+output: dictionary where key, value = movie, dictionary of cast members
+Example output: {'Movie_Title : {Actor_1: 'Actor/Actress name', Actor_2: 'Actor/Actress name', Director: 'Director name}}
+
+for movie in list of movies:
+	for key in dictionary[Movie_Title]
+		use IMDb python package cinemagoer to obtain actor1, actor2, director etc
+		// reason I am doing top 2 billed actors/actresses for each movie and not top Actor and top Actress is because IMDb only gives names. This avoids making gender assumptions based on name only, which could skew     		results
+		dictionary[Movie Title][key] = get director name using cinemagoer
+return movie_crew_dictionary
+
 
 FUNCTION randomize movie
 //This function will drive the suggestion aspect of the algorithm. Since metropolis hastings suggestions do not fix a variable like Gibbs, suggestions may change one or all variables
 
-input: category, category nomination list
+input: category, movie_crew dictionary, crew_list <- [Director, Actor1, Actor2]
 output: randomized movie crew
+
+random_movie_dict <- initialize empty dictionary {}
+for index in length of crew_list:
+	i_one <- randomly choose number between 0 and length of movie_crew_dictionary
+	random_movie_dict[index] <- movie_crew_dictionary[i_one][index]
+
+return random_movie_dict
+
+FUNCTION assess win prob
+//This function will assess the win probability of an entire movie by averaging the win probability of each member
+
+input: random_movie_dict, movie_crew_dict, category
+output: dictionary where key = movie and value = win prob
+
+for member in the range of length of random_movie_dict:
+	members_movies <- look up random_movie_dict[member] with cinemagoer and get total list of movies 
+	intersection_members_movies <- take the instersection of member's movies and nominated movies for given category 
+	nom_count <- count how many movies are in intersection_members_movies
+	win count <- initialize to 0 here
+	for movie in intersection_members_movies
+		if movie[-1] == 'w'
+		win_count += 1
+	win probability = win_count / nom_count
+
+return win probability
+	
+
+
 
 	
 ```
