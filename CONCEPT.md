@@ -149,6 +149,14 @@ while retaining the 'relationship factor'.
 
   			
 			
+# Updated assessment of pitfalls and risks
+The first thing I need to understand is how to load in the data for my algorithm to work. I need to be able to understand how the data coming in from the academy award database will be formatted.
+The pseudocode I have outlined is the basic approach to implementing the algorithm, but will become more complex if I decide to implement interactions between crew members. 
+I do think I have found a viable way to handle to data pitfall outlined in the proposal, that category title being fed in from all years will have different names. To circumvent this, I am only 
+sampling from the 'modern era' 1960 - 2024. This well generally ensure that category titles are consistent, and it will cut down on data being produced. 
+
+I still struggle with how to check the output of the algorithm against some ground truth. One approach is creating a very small data set comprised of very successful oscar winners and some not so successful candidates.
+A properly functioning algorith should select for the successful candidates.
 
 
 	
