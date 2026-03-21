@@ -40,6 +40,8 @@ initialize category nominee list
 nominee list = []
 for year in the range of start year to end year:
 	for movie nominated in category
+		if movie won:
+			movie = add _w to end off movie name
 		append to nominee list
 return the nominee list
 
@@ -89,11 +91,27 @@ for member in the range of length of random_movie_dict:
 	win probability = win_count / nom_count
 
 return win probability
-	
 
+FUNCTION Metropolis_Hastings
+//function iterates a defined amount of times to select a movie that is optimized for the category it is nominated for
 
+input: category, amount of movie to be nominated (x), data from func1
+output: x amount of optimized movies
 
-	
+nominated_movies <- call nominated movie list function (category, data
+movie_crew <- call get movie crew with nominated movies
+initialize an empty list that will be our optimized nominated movies
+set iteration counter <- number of iterations desired
+while the length of optimized movies < x:
+	initialize best_current_movie <- get random_movie
+	while iterations < iterations counter:
+		get radnom_new_movie
+		call assess win probability on best_current_movie and random_new_movie
+		best_current_movie is set to the radnom selection between the two movies based on win_prob
+	optimized_movies.append(best_current_movie)
+
+return nominated movie list
+
 ```
 
 	
