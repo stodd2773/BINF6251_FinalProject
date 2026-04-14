@@ -17,5 +17,14 @@ A successful run will output a list of movies nominated for a given category, an
 The test data originated from a .csv file found on Kaggle that contains all oscar nominated movies and their year, corresponding nominee, and whether they won.
 When reading in the .csv as a pandas dataframe, all years prior to 1960 were filtered out. These dataframes can be further processed to only look at necessary information, and prototype data runs only look at a single year. Truth from these single year runs is presented with an oscar season that contains all nominated nominees.
 
+# Discussion
+
+Thus far, I have found massive value in my approach parsing and using pandas dataframes as my primary data type. I have had little to no prior experience with this, so I have learned quite a bit in that regard. I have also noticed the more I at tempt to implement, the more I realize there are additionaly things I need to cosnider to make the program run smoothly. 
+
+I ran into quite a big issue halfway through my random movie class, cinemagoer stopped returning movie information. The internet was helpful for getting to the bottom of the issue, but it sounds like the way cinemagoer obtains information from IMDb, IMDb will frequently block queries from cinemagoer. Since I want to create a program that will always work, I need to find a way around this. My implementation looks a little bare, but once I find a work around for this I need to: 
+
+1) finish the random movie class
+2) implement the MH algorithm
+
 
 
