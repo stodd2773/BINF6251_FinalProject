@@ -27,10 +27,6 @@ The entire simulation can be run within the driver program ```Academy_award_show
 
 The expected output should be a text-based simulation, describing who was nominated and the cast supporting them, and finally the winners for each category.
 
-```
-output snippet here
-
-```
 
 This program is broken into 2 main functions (all of which can be run with the ```Academy_award_show()``` call).
 
@@ -64,10 +60,6 @@ Running this program using only one year should select the same crew for each no
 
 And example when run on only 2024 
 
-```
-example here
-
-```
 
 
 
